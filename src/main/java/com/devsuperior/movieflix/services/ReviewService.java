@@ -20,7 +20,8 @@ public class ReviewService {
     }
 
     @Transactional
-    public ReviewDTO insert(ReviewDTO dto) {
+    public ReviewDTO newReview(ReviewDTO dto) {
+
         Review review = new Review();
         review.setText(dto.getText());
         Movie movie = new Movie();
@@ -29,7 +30,7 @@ public class ReviewService {
         User user = authService.authenticated();
         review.setUser(user);
         review = reviewRepository.save(review);
-        return new ReviewDTO(review);
 
+        return new ReviewDTO(review);
     }
 }

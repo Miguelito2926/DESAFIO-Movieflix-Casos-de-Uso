@@ -25,8 +25,8 @@ public class ReviewController {
 
     @PreAuthorize("hasRole('ROLE_MEMBER')")
     @PostMapping
-    public ResponseEntity<ReviewDTO> insert(@RequestBody @Valid ReviewDTO dto) {
-        dto = reviewService.insert(dto);
+    public ResponseEntity<ReviewDTO> newReview(@RequestBody @Valid ReviewDTO dto) {
+        dto = reviewService.newReview(dto);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}")
                 .buildAndExpand(dto.getId()).toUri();
         return ResponseEntity.created(uri).body(dto);

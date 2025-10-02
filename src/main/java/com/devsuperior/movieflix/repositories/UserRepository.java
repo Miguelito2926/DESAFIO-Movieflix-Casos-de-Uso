@@ -1,12 +1,11 @@
 package com.devsuperior.movieflix.repositories;
 
-import java.util.List;
-
+import com.devsuperior.movieflix.entities.User;
+import com.devsuperior.movieflix.projections.UserDetailsProjection;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
-import com.devsuperior.movieflix.entities.User;
-import com.devsuperior.movieflix.projections.UserDetailsProjection;
+import java.util.List;
 
 public interface UserRepository extends JpaRepository<User, Long> {
 
